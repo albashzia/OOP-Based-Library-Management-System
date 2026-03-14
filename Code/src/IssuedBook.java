@@ -1,12 +1,10 @@
 public class IssuedBook {
-    int bookID;
-    int memberID;
+    Book book;
+    Member member;
     String issueDate;
 
-    IssuedBook(int bookID, int memberID, String date) {
+    IssuedBook(String date) {
 
-        this.bookID = bookID;
-        this.memberID = memberID;
         this.issueDate = date;
     }
 }
