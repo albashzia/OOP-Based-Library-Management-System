@@ -3,8 +3,9 @@ public class IssuedBook {
     Member member;
     String issueDate;
 
-    IssuedBook(String date) {
-
+    IssuedBook(Book book, Member member, String date) {
+        this.book = book;
+        this.member = member;
         this.issueDate = date;
     }
 }
