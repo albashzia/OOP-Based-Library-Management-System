@@ -34,7 +34,7 @@ public class Member extends Person {
         return email;
     }
 
-    //display method
+    //display  method
     public void displayMemberDetails(){
         super.displayDetails();
         System.out.println("Phone Number: " +this.phone);
