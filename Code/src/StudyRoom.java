@@ -11,6 +11,6 @@ public class StudyRoom {
 
     }
     public boolean isReserved(){
-
+        return false;
     }
 }
