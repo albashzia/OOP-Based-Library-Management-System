@@ -1,4 +1,5 @@
 public class Person {
+    //data members
     private String id;
     private String name;
 
@@ -22,6 +23,7 @@ public class Person {
     public void setName(String name){
         this.name = name;
     }
+
     //getters
     public String getId(){
         return id;

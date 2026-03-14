@@ -1,4 +1,5 @@
 public class Member extends Person {
+    //data members
     private String phone;
     private String email;
 
