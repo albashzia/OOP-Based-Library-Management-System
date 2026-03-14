@@ -14,4 +14,13 @@ public class Library
 
     void returnBook() {
     }
+
+    void searchBookByID(){
+    };
+
+    void searchBookByAuthor(){
+    };
+
+    void displayIssuedBooks(){
+    };
 }
