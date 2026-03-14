@@ -14,4 +14,32 @@ public class Book {
         this.availableQuantity = qty;
     }
 
+    void issueCopy(){
+
+    };
+
+    void returnCopy(){
+
+    };
+
+    void displayBook(){
+
+    };
+
+    int getID(){
+        return id;
+    };
+
+    String getTitle(){
+        return title;
+    };
+
+    String getAuthor() {
+        return author;
+    };
+
+    int getAvailableQuantity(){
+        return availableQuantity;
+    };
+
 }
