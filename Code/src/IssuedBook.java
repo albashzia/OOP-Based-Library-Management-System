@@ -8,4 +8,19 @@ public class IssuedBook {
         this.member = member;
         this.issueDate = date;
     }
+
+    void displayIssuedBook(){
+    };
+
+    void getBook(){
+        book.displayBook();
+    };
+
+    void getMember(){
+        member.displayMemberDetails();
+    };
+
+    String getIssueDate(){
+        return issueDate;
+    };
 }
