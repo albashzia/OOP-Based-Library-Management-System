@@ -13,6 +13,9 @@ public class StudyRoom {
         this.isReserved=isReserved;
         this.reservedByMemberID=reservedByMemberID;
     }
+    void displayAllRooms(){
+
+    }
 
     void reserveRoom(int reservedByMemberID){
     }
@@ -37,7 +40,7 @@ public class StudyRoom {
         return roomNumber;
     }
 
-    int reservedByMemberID()
+    int getreservedByMemberID()
     {
         return reservedByMemberID;
     }
