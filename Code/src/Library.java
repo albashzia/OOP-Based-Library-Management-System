@@ -49,5 +49,12 @@ public class Library
     }
 
     void displayIssuedBooks(){
+        if(issuedBooks.isEmpty()){
+            System.out.println("No issued books");
+            return;
+        }
+        for(IssuedBook ib:issuedBooks){
+            ib.displayIssuedBook();
+        }
     }
 }
