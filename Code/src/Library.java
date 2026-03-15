@@ -10,7 +10,14 @@ public class Library
         System.out.println("Book added.");
     }
 
-    void removeBook() {
+    void removeBook(int id) {
+        for(Book b:books){
+            if(b.getID()==id){
+                books.remove(b);
+                System.out.println("Book Removed");
+            }
+            return;
+        }
     }
 
     void displayAllBooks() {
