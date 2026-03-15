@@ -25,7 +25,10 @@ public class Book {
     };
 
     void returnCopy(){
-
+        if(availableQuantity < totalQuantity){
+            availableQuantity++;
+            System.out.println("Book returned successfully.");
+        }
     };
 
     void displayBook(){
