@@ -14,4 +14,31 @@ public class StudyRoom {
         this.reservedByMemberID=reservedByMemberID;
     }
 
+    void reserveRoom(int reservedByMemberID){
+    }
+
+    void cancelReservation(){
+    }
+
+    void displayRoomStatus(){
+        if(isReserved){
+            System.out.println("The room " + roomNumber + "is already reserved by member " + reservedByMemberID);
+        }
+        else{
+            System.out.println("The room " + roomNumber + "is available");
+        }
+    }
+
+    boolean isReserved(){
+        return isReserved;
+    }
+
+    int getRoomNumber(){
+        return roomNumber;
+    }
+
+    int reservedByMemberID()
+    {
+        return reservedByMemberID;
+    }
 }
