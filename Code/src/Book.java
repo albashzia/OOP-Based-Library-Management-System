@@ -15,7 +15,13 @@ public class Book {
     }
 
     void issueCopy(){
-
+        if(availableQuantity > 0){
+            availableQuantity--;
+            System.out.println("Book issued successfully.");
+        }
+        else{
+            System.out.println("No copies available.");
+        }
     };
 
     void returnCopy(){
