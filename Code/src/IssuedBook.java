@@ -20,12 +20,12 @@ public class IssuedBook {
         System.out.println("--------------------------");
     };
 
-    void getBook(){
-        book.displayBook();
+    Book getBook(){
+        return book;
     };
 
-    void getMember(){
-        member.displayMemberDetails();
+    Member getMember(){
+        return member;
     };
 
     String getIssueDate(){
