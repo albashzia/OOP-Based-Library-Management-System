@@ -21,6 +21,13 @@ public class Library
     }
 
     void displayAllBooks() {
+        if(books.isEmpty()){
+            System.out.println("No Books Available");
+            return;
+        }
+        for(Book b: books){
+            b.displayBook();
+        }
     }
 
     void issueBook() {
