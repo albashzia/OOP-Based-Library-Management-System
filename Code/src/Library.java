@@ -36,12 +36,18 @@ public class Library
     void returnBook() {
     }
 
-    void searchBookByID(){
-    };
+    Book searchBookByID(int id){
+        for(Book b:books) {
+            if (b.getID() == id) {
+                return b;
+            }
+        }
+        return null;
+    }
 
     void searchBookByAuthor(){
-    };
+    }
 
     void displayIssuedBooks(){
-    };
+    }
 }
