@@ -15,15 +15,28 @@ public class Book {
     }
 
     void issueCopy(){
-
+        if(availableQuantity > 0){
+            availableQuantity--;
+            System.out.println("Book issued successfully.");
+        }
+        else{
+            System.out.println("No copies available.");
+        }
     };
 
     void returnCopy(){
-
+        if(availableQuantity < totalQuantity){
+            availableQuantity++;
+            System.out.println("Book returned successfully.");
+        }
     };
 
     void displayBook(){
-
+        System.out.println("Book ID: " + id);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Available Copies: " + availableQuantity);
+        System.out.println("-------------------------");
     };
 
     int getID(){
