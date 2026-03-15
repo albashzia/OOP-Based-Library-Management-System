@@ -10,6 +10,14 @@ public class IssuedBook {
     }
 
     void displayIssuedBook(){
+        System.out.println("Issued Book Details:");
+        book.displayBook();
+
+        System.out.println("Issued To:");
+        member.displayMemberDetails();
+
+        System.out.println("Issue Date: " + issueDate);
+        System.out.println("--------------------------");
     };
 
     void getBook(){
