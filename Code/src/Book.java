@@ -32,7 +32,11 @@ public class Book {
     };
 
     void displayBook(){
-
+        System.out.println("Book ID: " + id);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Available Copies: " + availableQuantity);
+        System.out.println("-------------------------");
     };
 
     int getID(){
