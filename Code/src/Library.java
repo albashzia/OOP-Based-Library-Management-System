@@ -5,7 +5,9 @@ public class Library
     ArrayList<Book> books = new ArrayList<>();
     ArrayList<IssuedBook> issuedBooks = new ArrayList<>();
 
-    void addBook() {
+    void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added.");
     }
 
     void removeBook() {
