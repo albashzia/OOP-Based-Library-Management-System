@@ -1,10 +1,14 @@
 public class Book {
+
+    // Attributes
+
     int id;
     String title;
     String author;
     int totalQuantity;
     int availableQuantity;
 
+    //Parameterized Constructor
     Book(int id, String title, String author, int qty) {
 
         this.id = id;
