@@ -18,6 +18,7 @@ public class Book {
         this.availableQuantity = qty;
     }
 
+    // Method to decrement the number of copies upon being called
     void issueCopy(){
         if(availableQuantity > 0){
             availableQuantity--;
@@ -28,6 +29,7 @@ public class Book {
         }
     };
 
+    // Method to increment the number of copies upon being called
     void returnCopy(){
         if(availableQuantity < totalQuantity){
             availableQuantity++;
