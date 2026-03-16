@@ -45,18 +45,21 @@ public class Book {
         System.out.println("-------------------------");
     };
 
+    // Getter Methods
+
+    //returns id
     int getID(){
         return id;
     };
-
+    //returns title
     String getTitle(){
         return title;
     };
-
+    //returns author
     String getAuthor() {
         return author;
     };
-
+    //returns available quantity
     int getAvailableQuantity(){
         return availableQuantity;
     };
