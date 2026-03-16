@@ -2,9 +2,9 @@ public class IssuedBook {
 
     //ATTRIBUTES
 
-    Book book; // associated with Book object
-    Member member; //associated with Member object
-    String issueDate;
+    private Book book; // associated with Book object
+    private Member member; //associated with Member object
+    private String issueDate;
 
     //Parameterized Constructor
     IssuedBook(Book book, Member member, String date) {
