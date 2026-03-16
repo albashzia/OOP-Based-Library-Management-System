@@ -1,8 +1,12 @@
 public class IssuedBook {
-    Book book;
-    Member member;
+
+    //ATTRIBUTES
+
+    Book book; // associated with Book object
+    Member member; //associated with Member object
     String issueDate;
 
+    //Parameterized Constructor
     IssuedBook(Book book, Member member, String date) {
         this.book = book;
         this.member = member;
