@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class LMS {
-    private Scanner input;
-    private Library library;
+    Scanner input;
+    Library library;
 
     //constructor
     LMS(){
@@ -63,8 +63,20 @@ public class LMS {
             System.out.println("Enter your choice");
             choice=input.nextInt();
             switch(choice){
-                case 1: //library.addBook();
+                case 1:
+                    System.out.print("Enter Book ID: ");
+                    int id = input.nextInt();
+                    input.nextLine();
+                    System.out.print("Enter Title: ");
+                    String title = input.nextLine();
+                    System.out.print("Enter Author: ");
+                    String author = input.nextLine();
+                    System.out.print("Enter Quantity: ");
+                    int qty = input.nextInt();
+                    Book book = new Book(id, title, author, qty);
+                    library.addBook(book);
                     break;
+
                 case 2: //library.removeBook();
                     break;
                 case 3: library.displayAllBooks();
