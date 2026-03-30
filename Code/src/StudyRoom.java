@@ -8,39 +8,60 @@ public class StudyRoom {
         isReserved=false;
         reservedByMemberID=0;
     }
+    StudyRoom(int roomNumber){
+       this.roomNumber=roomNumber;
+       this.isReserved=false;
+       this.reservedByMemberID=0;
+
+    }
     StudyRoom(int roomNumber,boolean isReserved,int reservedByMemberID){
         this.roomNumber=roomNumber;
         this.isReserved=isReserved;
         this.reservedByMemberID=reservedByMemberID;
     }
-    void displayAllRooms(){
 
-    }
 
-    void reserveRoom(int reservedByMemberID){
-    }
-
-    void cancelReservation(){
-    }
-
-    void displayRoomStatus(){
-        if(isReserved){
-            System.out.println("The room " + roomNumber + "is already reserved by member " + reservedByMemberID);
+    public void reserveRoom(int memberID){
+        if(!isReserved){
+            isReserved=true;
+            reservedByMemberID=memberID;
+            System.out.println("Room is reserved");
         }
         else{
-            System.out.println("The room " + roomNumber + "is available");
+            System.out.println("Room is already reserved");
+        }
+    }
+    //cancel reservation method
+    public void cancelReservation(){
+        if(isReserved){
+            isReserved=false;
+            reservedByMemberID=0;
+            System.out.println("Reservation of room is cancelled");
+        }
+        else{
+            System.out.println("Room is not reserved");
         }
     }
 
-    boolean isReserved(){
+    public void displayRoomStatus() {
+        boolean reserved=isReserved();
+        System.out.println("Room " + roomNumber + "| Reserved : " + reserved +
+                (reserved ? "| By Member ID : " +reservedByMemberID:"") );
+    }
+
+    public boolean isReserved(){
+
         return isReserved;
+
     }
 
-    int getRoomNumber(){
+    public int getRoomNumber(){
+
         return roomNumber;
+
     }
 
-    int getreservedByMemberID()
+    public int getreservedByMemberID()
     {
         return reservedByMemberID;
     }
