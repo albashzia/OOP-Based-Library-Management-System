@@ -114,6 +114,7 @@ public class Library
 
         boolean found = false;
 
+        //using for loop
         for (Member m : members) {
             if (m.getName().equalsIgnoreCase(name)) {
                 System.out.println("Member Found:");
