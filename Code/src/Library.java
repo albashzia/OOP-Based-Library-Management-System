@@ -4,6 +4,7 @@ public class Library
 {
     ArrayList<Book> books = new ArrayList<>();
     ArrayList<IssuedBook> issuedBooks = new ArrayList<>();
+    ArrayList<Member> members = new ArrayList<>();
 
     void addBook(Book book) {
         books.add(book);
@@ -55,6 +56,74 @@ public class Library
         }
         for(IssuedBook ib:issuedBooks){
             ib.displayIssuedBook();
+        }
+    }
+
+    public int findMemberIndexById(String id){
+        //check if member already exists
+        for(int i = 0; i < members.size(); i++){
+            if (members.get(i).getId().equals(id)) {
+                return i;
+            }
+        }
+            return -1;
+    }
+
+    //REGISTER MEMBER
+    public void registerNewMember(String id, String name,String phone, String email){
+        if (findMemberIndexById(id) != -1) {
+            System.out.println("Member ID already exists.");
+                return;
+
+        }
+
+        //adds a new member
+        members.add(new Member(id,name,phone,email));
+        System.out.println("Member registered successfully");
+    }
+
+    //REMOVE MEMBER
+    public void removeMember(String id){
+        //checks if member id already exists or not
+        int index = findMemberIndexById(id);
+
+        if(index == -1){
+            System.out.println("Member ID not found.");
+            return;
+        }
+
+        members.remove(index);
+        System.out.println("Member removed successfully");
+    }
+
+    //SEARCH MEMBER BY ID
+    public void searchMemberById(String id){
+        int index = findMemberIndexById(id);
+
+        if(index == -1){
+            System.out.println("Member not found");
+            return;
+        }
+
+        System.out.println("Member found.");
+        members.get(index).displayMemberDetails();
+    }
+
+    //SEARCH MEMBERS BY NAME
+    public void searchMemberByName(String name) {
+
+        boolean found = false;
+
+        for (Member m : members) {
+            if (m.getName().equalsIgnoreCase(name)) {
+                System.out.println("Member Found:");
+                m.displayMemberDetails();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Member not found");
         }
     }
 }
