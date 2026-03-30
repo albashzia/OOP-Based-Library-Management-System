@@ -23,7 +23,7 @@ public class LMS {
             System.out.println("1.Books Menu");
             System.out.println("2.Member Menu");
             System.out.println("3.StudyRoom Menu");
-            System.out.println("4.Exit");
+            System.out.println("0.Exit");
             System.out.println("Enter your choice");
 
             choice=input.nextInt();
@@ -42,7 +42,7 @@ public class LMS {
                     break;
             }
 
-        } while(choice!=4);
+        } while(choice!=0);
 
 
     }
@@ -59,9 +59,8 @@ public class LMS {
             System.out.println("6.Search Book by ID");
             System.out.println("7.Search Book by Author");
             System.out.println("8.Display Issued Books");
+            System.out.println("0.Exit");
             System.out.println("Enter your choice");
-            System.out.println("9.Exit");
-
             choice=input.nextInt();
             switch(choice){
                 case 1: library.addBook();
@@ -92,7 +91,7 @@ public class LMS {
             }
 
         }
-        while(choice!=9);
+        while(choice!=0);
 
 
     }
@@ -107,7 +106,7 @@ public class LMS {
             System.out.println("4.Search Member by Name");
             System.out.println("5.Display Issued Book by Member");
             System.out.println("6.Display all Members");
-            System.out.println("7.Exit");
+            System.out.println("0.Exit");
             System.out.println("Enter your choice");
             choice = input.nextInt();
             switch (choice) {
@@ -136,7 +135,7 @@ public class LMS {
                     System.out.println("Invalid Choice");
                     break;
             }
-        }while(choice!=7);
+        }while(choice!=0);
 
     }
     //Study Room Menu
@@ -148,7 +147,7 @@ public class LMS {
             System.out.println("2.Reserve Room");
             System.out.println("3.Cancel Reservation");
             System.out.println("4.Display Room Status");
-            System.out.println("5.Exit");
+            System.out.println("0.Exit");
             System.out.println("Enter your choice");
             choice=input.nextInt();
 
@@ -171,7 +170,7 @@ public class LMS {
 
 
             }
-        }while(choice!=5);
+        }while(choice!=0);
 
     }
 }
