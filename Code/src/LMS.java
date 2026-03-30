@@ -77,7 +77,10 @@ public class LMS {
                     library.addBook(book);
                     break;
 
-                case 2: //library.removeBook();
+                case 2:
+                    System.out.print("Enter Book ID to remove: ");
+                    int removeId = input.nextInt();
+                    library.removeBook(removeId);
                     break;
                 case 3: library.displayAllBooks();
                     break;
