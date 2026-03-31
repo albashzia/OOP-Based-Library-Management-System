@@ -9,9 +9,9 @@ public class StudyRoom {
         reservedByMemberID=0;
     }
     StudyRoom(int roomNumber){
-       this.roomNumber=roomNumber;
-       this.isReserved=false;
-       this.reservedByMemberID=0;
+        this.roomNumber=roomNumber;
+        this.isReserved=false;
+        this.reservedByMemberID=0;
 
     }
     StudyRoom(int roomNumber,boolean isReserved,int reservedByMemberID){
@@ -20,7 +20,7 @@ public class StudyRoom {
         this.reservedByMemberID=reservedByMemberID;
     }
 
-
+ // room reservation method
     public void reserveRoom(int memberID){
         if(!isReserved){
             isReserved=true;
@@ -42,6 +42,7 @@ public class StudyRoom {
             System.out.println("Room is not reserved");
         }
     }
+    // displaying all room status
 
     public void displayRoomStatus() {
         boolean reserved=isReserved();

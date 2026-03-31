@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class LMS {
-    private Scanner input;
-    private Library library;
+    Scanner input;
+    Library library;
 
     //constructor
     LMS(){
@@ -63,9 +63,24 @@ public class LMS {
             System.out.println("Enter your choice");
             choice=input.nextInt();
             switch(choice){
-                case 1: library.addBook();
+                case 1:
+                    System.out.print("Enter Book ID: ");
+                    int id = input.nextInt();
+                    input.nextLine();
+                    System.out.print("Enter Title: ");
+                    String title = input.nextLine();
+                    System.out.print("Enter Author: ");
+                    String author = input.nextLine();
+                    System.out.print("Enter Quantity: ");
+                    int qty = input.nextInt();
+                    Book book = new Book(id, title, author, qty);
+                    library.addBook(book);
                     break;
-                case 2: library.removeBook();
+
+                case 2:
+                    System.out.print("Enter Book ID to remove: ");
+                    int removeId = input.nextInt();
+                    library.removeBook(removeId);
                     break;
                 case 3: library.displayAllBooks();
                     break;
@@ -73,11 +88,11 @@ public class LMS {
                     break;
                 case 5: library.returnBook();
                     break;
-                case 6: library.searchBookByID();
+                case 6: //library.searchBookByID();
                     break;
                 case 7: library.searchBookByAuthor();
                     break;
-                case 8: library.displayIssuedBook();
+                case 8: //library.displayIssuedBook();
                     break;
                 case 9:
                     System.out.println("Returning to main menu..");
@@ -111,22 +126,22 @@ public class LMS {
             choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    library.registerMember();
+                    //library.registerMember();
                     break;
                 case 2:
-                    library.removeMember();
+                    //library.removeMember();
                     break;
                 case 3:
-                    library.searchMemberByID();
+                    //library.searchMemberByID();
                     break;
                 case 4:
-                    library.searchMemberByName();
+                    //library.searchMemberByName();
                     break;
                 case 5:
-                    library.displayIssuedBooksByMember();
+                    //library.displayIssuedBooksByMember();
                     break;
                 case 6:
-                    library.displayAllMembers();
+                    //library.displayAllMembers();
                     break;
                 case 7:
                     System.out.println("Returning to main menu...");
@@ -146,21 +161,19 @@ public class LMS {
             System.out.println("1.Display all Rooms");
             System.out.println("2.Reserve Room");
             System.out.println("3.Cancel Reservation");
-            System.out.println("4.Display Room Status");
             System.out.println("0.Exit");
             System.out.println("Enter your choice");
             choice=input.nextInt();
 
             switch(choice){
-                case 1: library.displayAllRooms();
+                case 1: //library.displayAllRooms();
                     break;
-                case 2: library.reserveRoom();
+                case 2: //library.reserveRoom();
                     break;
-                case 3: library.cancelReservation();
+                case 3: //library.cancelReservation();
                     break;
-                case 4: library.displayRoomStatus();
-                    break;
-                case 5:
+
+                    case 4:
                     System.out.println("Returning to main menu...");
                     break;
                 default:
