@@ -33,9 +33,10 @@ public class Library {
             if (b.getID() == id) {
                 books.remove(b);
                 System.out.println("Book Removed");
+                return;
             }
-            return;
         }
+        System.out.println("Book not found");
     }
 
     void displayAllBooks() {
