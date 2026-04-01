@@ -168,7 +168,7 @@ public class Library {
 
         System.out.println("---ALL MEMBERS---");
         for(Member m : members){
-            System.out.println("ID : " +m.getId()+ " Name : " +m.getName());
+            System.out.println("ID : " +m.getId()+ " | Name : " +m.getName());
         }
     }
 
