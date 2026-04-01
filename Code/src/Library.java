@@ -86,9 +86,9 @@ public class Library {
         return null;
     }
 
-    Member findMember(int memberID){
+    Member findMember(String memberID){
         for(Member m:members){
-            if(m.getID()==memberID){
+            if(m.getId().equals(memberID)){
                 return m;
             }
         } return null;
