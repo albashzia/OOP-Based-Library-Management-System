@@ -21,10 +21,10 @@ public class StudyRoom {
     }
 
  // room reservation method
-    public void reserveRoom(int memberID){
+    public void reserveRoom(String memberID){
         if(!isReserved){
             isReserved=true;
-            reservedByMemberID=memberID;
+            reservedByMemberID=Integer.parseInt(memberID);
             System.out.println("Room is reserved");
         }
         else{

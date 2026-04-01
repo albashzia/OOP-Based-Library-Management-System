@@ -86,26 +86,137 @@ public class Library {
         return null;
     }
 
-    Member findMember(int memberID){
-        for(Member m:members){
-            if(m.getID()==memberID){
+    /*
+    * ----MEMBERSHIP OPERATIONS----*/
+
+    public Member findMemberById(String id){
+        for(Member m : members){
+            if(m.getId().equals(id)){
                 return m;
             }
-        } return null;
+        }
+        return null;
     }
+
+    //REGISTER MEMBER
+    public void registerNewMember(String id, String name,String phone, String email){
+        if (findMemberById(id) != null) {
+            System.out.println("Member ID already exists.");
+            return;
+
+        }
+
+        //adds a new member
+        members.add(new Member(id,name,phone,email));
+        System.out.println("Member registered successfully");
+    }
+
+    //REMOVE MEMBER
+    public void removeMember(String id){
+        //checks if member id already exists or not
+        Member m = findMemberById(id);
+
+        if(m == null){
+            System.out.println("Member ID not found.");
+            return;
+        }
+
+        members.remove(m);
+        System.out.println("Member removed successfully");
+    }
+
+    //SEARCH MEMBER BY ID
+    public void searchMemberById(String id){
+        Member m = findMemberById(id);
+
+        if(m == null){
+            System.out.println("Member not found");
+            return;
+        }
+
+        System.out.println("Member found.");
+        m.displayMemberDetails();
+    }
+
+    //SEARCH MEMBERS BY NAME
+    public void searchMemberByName(String name) {
+
+        boolean found = false;
+
+        //using for loop
+        for (Member m : members) {
+            if (m.getName().equalsIgnoreCase(name)) {
+                System.out.println("Member Found:");
+                m.displayMemberDetails();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Member not found");
+        }
+    }
+
+    //DISPLAY ALL MEMBERS
+    public void displayAllMembers(){
+        if(members.isEmpty()){
+            System.out.println("No members registered");
+            return;
+        }
+
+        System.out.println("---ALL MEMBERS---");
+        for(Member m : members){
+            System.out.println("ID : " +m.getId()+ " Name : " +m.getName());
+        }
+    }
+
+    //VIEW BOOKS ISSUED BY A MEMBER
+    public void viewBooksIssuedByAMember(){
+        System.out.println("Enter member ID : ");
+        String mId = input.nextLine();
+
+        Member m = findMemberById(mId);
+
+        if(m == null){
+            System.out.println("Member not found.");
+            return;
+        }
+
+        System.out.println("\nBooks issued to:");
+        m.displayMemberDetails();
+
+        //now check if the member has issued books
+        boolean flag = false;
+
+        for(IssuedBook ib : issuedBooks){
+            if(ib.getMember().getId().equals(mId)){
+                ib.displayIssuedBook();
+                flag = true;
+            }
+        }
+
+        if (!flag) {
+            System.out.println("No books issued to this member.");
+        }
+    }
+
+    /*
+    * ----STUDY ROOM OPERATIONS----*/
+
     void reserveRoom(){
         System.out.println("Enter room number :");
         int roomNumber=input.nextInt();
+        input.nextLine();
 
         System.out.println("Enter member ID : ");
-        int memberID=input.nextInt();
+        String memberID=input.nextLine();
 
         StudyRoom room= findRoom(roomNumber);
         if(room==null){
             System.out.println("Room does not exist");
             return;
         }
-        Member member= findMember(memberID);
+        Member member= findMemberById(memberID);
         if(member==null){
             System.out.println("Member does not exist");
             return;
@@ -121,19 +232,19 @@ public class Library {
         int roomNumber=input.nextInt();
 
         System.out.println("Enter member ID : ");
-        int memberID=input.nextInt();
+        String memberID=input.nextLine();
 
         StudyRoom room= findRoom(roomNumber);
         if(room==null){
             System.out.println("Room does not exist");
             return;
         }
-        Member member= findMember(memberID);
+        Member member= findMemberById(memberID);
         if(member==null){
             System.out.println("Member does not exist");
             return;
         }
-        if(room.getreservedByMemberID()!=memberID){
+        if(!room.getreservedByMemberID().equals(memberID)){
             System.out.println("The member didnt reserve this room.");
             return;
         }
