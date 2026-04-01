@@ -24,7 +24,7 @@ public class Library {
     }
 
     /*
-    * ----BOOK OPERATIONS----*/
+     * ----BOOK OPERATIONS----*/
     void addBook(Book book) {
         books.add(book);
         System.out.println("Book added.");
@@ -89,7 +89,7 @@ public class Library {
     }
 
     /*
-    * ----MEMBERSHIP OPERATIONS----*/
+     * ----MEMBERSHIP OPERATIONS----*/
 
     public Member findMemberById(String id){
         for(Member m : members){
@@ -203,7 +203,7 @@ public class Library {
     }
 
     /*
-    * ----STUDY ROOM OPERATIONS----*/
+     * ----STUDY ROOM OPERATIONS----*/
 
     void reserveRoom(){
         System.out.println("Enter room number :");
@@ -232,6 +232,7 @@ public class Library {
     void cancelReservation(){
         System.out.println("Enter room number :");
         int roomNumber=input.nextInt();
+        input.nextLine();
 
         System.out.println("Enter member ID : ");
         String memberID=input.nextLine();
@@ -246,7 +247,7 @@ public class Library {
             System.out.println("Member does not exist");
             return;
         }
-        if(!room.getreservedByMemberID().equals(memberID)){
+        if(room.getReservedByMemberID()==null || !room.getReservedByMemberID().equals(memberID)){
             System.out.println("The member didnt reserve this room.");
             return;
         }

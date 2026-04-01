@@ -34,7 +34,7 @@ public class LMS {
                     break;
                 case 3: studyRoomMenu();
                     break;
-                case 4:
+                case 0:
                     System.out.println("Exiting LMS");
                     break;
                 default :
@@ -94,7 +94,7 @@ public class LMS {
                     break;
                 case 8: //library.displayIssuedBook();
                     break;
-                case 9:
+                case 0:
                     System.out.println("Returning to main menu..");
                     break;
                 default:
@@ -111,48 +111,66 @@ public class LMS {
 
     }
     //Members Menu
-    public void membersMenu(){
-        int choice;
-        do {
-            System.out.println("--MEMBER MENU--");
-            System.out.println("1.Register Member");
-            System.out.println("2.Remove Member");
-            System.out.println("3.Search Member by ID");
-            System.out.println("4.Search Member by Name");
-            System.out.println("5.Display Issued Book by Member");
-            System.out.println("6.Display all Members");
-            System.out.println("0.Exit");
-            System.out.println("Enter your choice");
-            choice = input.nextInt();
-            switch (choice) {
-                case 1:
-                    //library.registerMember();
-                    break;
-                case 2:
-                    //library.removeMember();
-                    break;
-                case 3:
-                    //library.searchMemberByID();
-                    break;
-                case 4:
-                    //library.searchMemberByName();
-                    break;
-                case 5:
-                    //library.displayIssuedBooksByMember();
-                    break;
-                case 6:
-                    //library.displayAllMembers();
-                    break;
-                case 7:
-                    System.out.println("Returning to main menu...");
-                    break;
-                default:
-                    System.out.println("Invalid Choice");
-                    break;
-            }
-        }while(choice!=0);
 
-    }
+        public void membersMenu(){
+            int choice;
+            do {
+                System.out.println("--MEMBER MENU--");
+                System.out.println("1.Register Member");
+                System.out.println("2.Remove Member");
+                System.out.println("3.Search Member by ID");
+                System.out.println("4.Search Member by Name");
+                System.out.println("5.Display Issued Book by Member");
+                System.out.println("6.Display all Members");
+                System.out.println("0.Exit");
+                System.out.println("Enter your choice");
+                choice = input.nextInt();
+                input.nextLine();
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter member ID:");
+                        String id=input.nextLine();
+                        System.out.println("Enter member name :");
+                        String name=input.nextLine();
+                        System.out.println("Enter phone number :");
+                        String phone=input.nextLine();
+                        System.out.println("Enter email:");
+                        String email=input.nextLine();
+                        library.registerNewMember(id,name,phone,email);
+                        break;
+                    case 2:
+                        System.out.println("Enter member ID:");
+                        String remid=input.nextLine();
+                        library.removeMember(remid);
+                        break;
+                    case 3:
+
+                        System.out.println("Enter member ID:");
+                        String sid=input.nextLine();
+                        library.searchMemberById(sid);
+                        break;
+                    case 4:
+                        System.out.println("Enter member name:");
+                        String memName=input.nextLine();
+                        library.searchMemberByName(memName);
+                        break;
+                    case 5:
+                        library.viewBooksIssuedByAMember();
+                        break;
+                    case 6:
+                        library.displayAllMembers();
+                        break;
+                    case 0:
+                        System.out.println("Returning to main menu...");
+                        break;
+                    default:
+                        System.out.println("Invalid Choice");
+                        break;
+                }
+            }while(choice!=0);
+
+        }
     //Study Room Menu
     public void studyRoomMenu(){
         int choice;
@@ -166,14 +184,14 @@ public class LMS {
             choice=input.nextInt();
 
             switch(choice){
-                case 1: //library.displayAllRooms();
+                case 1: library.displayRoomStatus();
                     break;
-                case 2: //library.reserveRoom();
+                case 2: library.reserveRoom();
                     break;
-                case 3: //library.cancelReservation();
+                case 3: library.cancelReservation();
                     break;
 
-                    case 4:
+                case 0:
                     System.out.println("Returning to main menu...");
                     break;
                 default:
@@ -187,3 +205,4 @@ public class LMS {
 
     }
 }
+
