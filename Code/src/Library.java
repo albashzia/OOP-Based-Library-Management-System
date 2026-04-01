@@ -251,6 +251,7 @@ public class Library {
         room.cancelReservation();
 
     }
+
     void displayRoomStatus(){
         System.out.println("----STUDY ROOMS----");
         for(StudyRoom r: rooms){
