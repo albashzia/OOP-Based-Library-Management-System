@@ -23,6 +23,8 @@ public class Library {
 
     }
 
+    /*
+    * ----BOOK OPERATIONS----*/
     void addBook(Book book) {
         books.add(book);
         System.out.println("Book added.");
