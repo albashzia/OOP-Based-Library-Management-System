@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Library
 {
+    Scanner input = new Scanner(System.in);
     ArrayList<Book> books = new ArrayList<>();
     ArrayList<IssuedBook> issuedBooks = new ArrayList<>();
     ArrayList<Member> members = new ArrayList<>();
@@ -31,7 +33,47 @@ public class Library
         }
     }
 
+    Member findMember(String memberId){
+        for (Member m:members){
+            if (m.getId()==memberId){
+                return m;
+            }
+        }
+        return null;
+    }
+
     void issueBook() {
+        System.out.print("Enter Book ID: ");
+        int bookId = input.nextInt();
+        System.out.print("Enter Member ID: ");
+        String memberId = input.nextLine();
+        input.nextLine();
+        System.out.print("Enter Issue Date (DD/MM/YYYY): ");
+        String date = input.nextLine();
+
+        Book book = searchBookByID(bookId);
+        if (book == null)
+        {
+            System.out.println("Book not found.");
+            return;
+        }
+
+        Member member = findMember(memberId);
+        if (member == null)
+        {
+            System.out.println("Member not found.");
+            return;
+        }
+
+        if (book.getAvailableQuantity() == 0)
+        {
+            System.out.println("No copies available.");
+            return;
+        }
+
+        book.issueCopy();
+        issuedBooks.add(new IssuedBook(book, member, date));
+        System.out.println("Book issued to " + member.getName());
     }
 
     void returnBook() {
