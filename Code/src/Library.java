@@ -89,6 +89,17 @@ public class Library
     }
 
     void searchBookByAuthor(){
+        input.nextLine(); // clear buffer
+        System.out.print("Enter author name: ");
+        String author = input.nextLine();
+        boolean found = false;
+        for (Book b : books) {
+            if (b.getAuthor().equalsIgnoreCase(author)) {
+                b.displayBook();
+                found = true;
+            }
+        }
+        if (!found) System.out.println("No books found by: " + author);
     }
 
     void displayIssuedBooks(){
