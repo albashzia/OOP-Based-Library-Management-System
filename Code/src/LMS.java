@@ -88,7 +88,12 @@ public class LMS {
                     break;
                 case 5: library.returnBook();
                     break;
-                case 6: //library.searchBookByID();
+                case 6:
+                    System.out.print("Enter Book ID: ");
+                    int searchId = input.nextInt();
+                    Book found = library.searchBookByID(searchId);
+                    if (found != null) found.displayBook();
+                    else System.out.println("Book not found.");
                     break;
                 case 7: library.searchBookByAuthor();
                     break;
