@@ -52,6 +52,18 @@ public class Library {
     }
 
     void issueBook() {
+
+        System.out.print("Enter Book ID: ");
+        int id = input.nextInt();
+        input.nextLine();
+
+        Book b = searchBookByID(id);
+        if(b == null)
+        {
+            System.out.println("Book not found");
+            return;
+        }
+
     }
 
     void returnBook() {
