@@ -92,7 +92,7 @@ public class LMS {
                     break;
                 case 7: library.searchBookByAuthor();
                     break;
-                case 8: //library.displayIssuedBook();
+                case 8: library.displayIssuedBooks();
                     break;
                 case 9:
                     System.out.println("Returning to main menu..");
