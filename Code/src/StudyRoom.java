@@ -45,10 +45,10 @@ public class StudyRoom {
     // displaying all room status
 
     public void displayRoomStatus() {
-
-        System.out.println("Room " + roomNumber + "| Reserved : " + isReserved +
-                (isReserved ? "| By Member ID : " +reservedByMemberID:"") );
+        System.out.printf("%-10d %-12s %-15s \n", roomNumber,
+                (isReserved ? "Reserved" : "Available"),(isReserved ? reservedByMemberID : "-" ));
     }
+
 
     public boolean isReserved(){
 
