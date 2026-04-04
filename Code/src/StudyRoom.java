@@ -1,30 +1,30 @@
 public class StudyRoom {
     private int roomNumber;
     private boolean isReserved;
-    private int reservedByMemberID;
+    private String reservedByMemberID;
 
     StudyRoom(){
         roomNumber=0;
         isReserved=false;
-        reservedByMemberID=0;
+        reservedByMemberID=null;
     }
     StudyRoom(int roomNumber){
         this.roomNumber=roomNumber;
         this.isReserved=false;
-        this.reservedByMemberID=0;
+        this.reservedByMemberID=null;
 
     }
-    StudyRoom(int roomNumber,boolean isReserved,int reservedByMemberID){
+    StudyRoom(int roomNumber,boolean isReserved,String reservedByMemberID){
         this.roomNumber=roomNumber;
         this.isReserved=isReserved;
         this.reservedByMemberID=reservedByMemberID;
     }
 
- // room reservation method
+    // room reservation method
     public void reserveRoom(String memberID){
         if(!isReserved){
             isReserved=true;
-            reservedByMemberID=Integer.parseInt(memberID);
+            reservedByMemberID=memberID;
             System.out.println("Room is reserved");
         }
         else{
@@ -35,7 +35,7 @@ public class StudyRoom {
     public void cancelReservation(){
         if(isReserved){
             isReserved=false;
-            reservedByMemberID=0;
+            reservedByMemberID=null;
             System.out.println("Reservation of room is cancelled");
         }
         else{
@@ -45,9 +45,9 @@ public class StudyRoom {
     // displaying all room status
 
     public void displayRoomStatus() {
-        boolean reserved=isReserved();
-        System.out.println("Room " + roomNumber + "| Reserved : " + reserved +
-                (reserved ? "| By Member ID : " +reservedByMemberID:"") );
+
+        System.out.println("Room " + roomNumber + "| Reserved : " + isReserved +
+                (isReserved ? "| By Member ID : " +reservedByMemberID:"") );
     }
 
     public boolean isReserved(){
@@ -62,8 +62,9 @@ public class StudyRoom {
 
     }
 
-    public int getreservedByMemberID()
+    public String getReservedByMemberID()
     {
+
         return reservedByMemberID;
     }
 }
