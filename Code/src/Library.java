@@ -73,6 +73,16 @@ public class Library {
             return;
         }
 
+        if(b.getAvailableQuantity() > 0){
+            b.issueCopy();
+            System.out.println("Enter the date: ");
+            String date = input.nextLine();
+            issuedBooks.add(new IssuedBook(b, m, date));
+        }
+        else
+        {
+            System.out.println("No copies available");
+        }
 
     }
 
