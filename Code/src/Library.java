@@ -64,6 +64,16 @@ public class Library {
             return;
         }
 
+        System.out.print("Enter Member ID: ");
+        String mId = input.nextLine();
+
+        Member m = findMemberById(mId);
+        if(m == null){
+            System.out.println("Member not found");
+            return;
+        }
+
+
     }
 
     void returnBook() {
