@@ -87,6 +87,35 @@ public class Library {
     }
 
     void returnBook() {
+        System.out.print("Enter Book ID: ");
+        int bookId = input.nextInt();
+        input.nextLine();
+
+        System.out.print("Enter Member ID: ");
+        String memberId = input.nextLine();
+
+        IssuedBook found = null;
+
+        for (IssuedBook ib : issuedBooks) {
+            if (ib.getBook().getID() == bookId &&
+                    ib.getMember().getId().equals(memberId)) {
+
+                found = ib;
+                break;
+            }
+        }
+
+        if (found != null) {
+            // increase book quantity
+            found.getBook().returnCopy();
+
+            // remove issued record
+            issuedBooks.remove(found);
+
+            System.out.println("Book returned successfully.");
+        } else {
+            System.out.println("No matching issued record found.");
+        }
     }
 
     Book searchBookByID(int id) {
