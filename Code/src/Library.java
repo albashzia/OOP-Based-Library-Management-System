@@ -31,13 +31,14 @@ public class Library {
     }
 
     void removeBook(int id) {
-        for (Book b : books) {
-            if (b.getID() == id) {
-                books.remove(b);
-                System.out.println("Book Removed");
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getID() == id) {
+                books.remove(i);
+                System.out.println("Book removed");
+                return;
             }
-            return;
         }
+        System.out.println("Book not found");
     }
 
     void displayAllBooks() {
