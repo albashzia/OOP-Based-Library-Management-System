@@ -261,7 +261,7 @@ public class Library {
         }
 
         System.out.println("\nBooks issued to:");
-        m.displayMemberDetails();
+
 
         //now check if the member has issued books
         boolean flag = false;
@@ -332,7 +332,9 @@ public class Library {
     }
 
     void displayRoomStatus(){
-        System.out.println("----STUDY ROOMS----");
+        System.out.println("----------STUDY ROOMS----------");
+        System.out.println("-------------------------------");
+        System.out.println("Room No    Status     Member ID");
         for(StudyRoom r: rooms){
             r.displayRoomStatus();
         }
