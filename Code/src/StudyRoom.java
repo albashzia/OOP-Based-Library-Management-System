@@ -1,70 +1,83 @@
 public class StudyRoom {
+
+    //Attributes
     private int roomNumber;
     private boolean isReserved;
     private String reservedByMemberID;
 
-    StudyRoom(){
+    //Default Constructor
+    StudyRoom()
+    {
         roomNumber=0;
         isReserved=false;
         reservedByMemberID=null;
     }
-    StudyRoom(int roomNumber){
+    //Parameterized constructor
+    StudyRoom(int roomNumber)
+    {
         this.roomNumber=roomNumber;
         this.isReserved=false;
         this.reservedByMemberID=null;
 
     }
-    StudyRoom(int roomNumber,boolean isReserved,String reservedByMemberID){
+    //Parameterized constructor
+    StudyRoom(int roomNumber,boolean isReserved,String reservedByMemberID)
+    {
         this.roomNumber=roomNumber;
         this.isReserved=isReserved;
         this.reservedByMemberID=reservedByMemberID;
     }
 
     // room reservation method
-    public void reserveRoom(String memberID){
-        if(!isReserved){
+    public void reserveRoom(String memberID)
+    {
+        if(!isReserved)
+        {
             isReserved=true;
             reservedByMemberID=memberID;
             System.out.println("Room is reserved");
         }
-        else{
+        else
+        {
             System.out.println("Room is already reserved");
         }
     }
+
     //cancel reservation method
-    public void cancelReservation(){
-        if(isReserved){
+    public void cancelReservation()
+    {
+        if(isReserved)
+        {
             isReserved=false;
             reservedByMemberID=null;
             System.out.println("Reservation of room is cancelled");
         }
-        else{
+        else
+        {
             System.out.println("Room is not reserved");
         }
     }
-    // displaying all room status
 
-    public void displayRoomStatus() {
+    // displaying all room status
+    public void displayRoomStatus()
+    {
         System.out.printf("%-10d %-12s %-15s \n", roomNumber,
                 (isReserved ? "Reserved" : "Available"),(isReserved ? reservedByMemberID : "-" ));
     }
 
-
-    public boolean isReserved(){
-
+    //Getter Methods
+    public boolean isReserved()
+    {
         return isReserved;
-
     }
 
-    public int getRoomNumber(){
-
+    public int getRoomNumber()
+    {
         return roomNumber;
-
     }
 
     public String getReservedByMemberID()
     {
-
         return reservedByMemberID;
     }
 }
