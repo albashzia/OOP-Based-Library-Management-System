@@ -2,12 +2,15 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Library {
+
+    //instantiating the operational objects such as ArrayLists and Scanner object
     ArrayList<Book> books;
     ArrayList<IssuedBook> issuedBooks ;
     ArrayList<Member>members;
     ArrayList<StudyRoom>rooms;
     Scanner input;
 
+    //Default constructor to initialize the objects
     Library(){
         books = new ArrayList<>();
         issuedBooks= new ArrayList<>();
@@ -19,20 +22,25 @@ public class Library {
         rooms.add(new StudyRoom(102));
         rooms.add(new StudyRoom(103));
         rooms.add(new StudyRoom(104));
-
-
     }
 
     /*
      * ----BOOK OPERATIONS----*/
-    void addBook(Book book) {
+
+    //method to add books to the array list
+    void addBook(Book book)
+    {
         books.add(book);
         System.out.println("Book added.");
     }
 
-    void removeBook(int id) {
-        for (int i = 0; i < books.size(); i++) {
-            if (books.get(i).getID() == id) {
+    //method to remove books from the array list
+    void removeBook(int id)
+    {
+        for (int i = 0; i < books.size(); i++)
+        {
+            if (books.get(i).getID() == id)
+            {
                 books.remove(i);
                 System.out.println("Book removed");
                 return;
@@ -41,18 +49,23 @@ public class Library {
         System.out.println("Book not found");
     }
 
-    void displayAllBooks() {
-        if (books.isEmpty()) {
+    //method to display all books using a for-each loop and method defined in Book class
+    void displayAllBooks()
+    {
+        if (books.isEmpty())
+        {
             System.out.println("No Books Available");
             return;
         }
-        for (Book b : books) {
+        for (Book b : books)
+        {
             b.displayBook();
         }
     }
 
-    void issueBook() {
-
+    //method to issue a Book
+    void issueBook()
+    {
         System.out.print("Enter Book ID: ");
         int id = input.nextInt();
         input.nextLine();
@@ -68,12 +81,14 @@ public class Library {
         String mId = input.nextLine();
 
         Member m = findMemberById(mId);
-        if(m == null){
+        if(m == null)
+        {
             System.out.println("Member not found");
             return;
         }
 
-        if(b.getAvailableQuantity() > 0){
+        if(b.getAvailableQuantity() > 0)
+        {
             b.issueCopy();
             System.out.println("Enter the date: ");
             String date = input.nextLine();
@@ -83,10 +98,11 @@ public class Library {
         {
             System.out.println("No copies available");
         }
-
     }
 
-    void returnBook() {
+    //method to record a returned book
+    void returnBook()
+    {
         System.out.print("Enter Book ID: ");
         int bookId = input.nextInt();
         input.nextLine();
@@ -96,10 +112,11 @@ public class Library {
 
         IssuedBook found = null;
 
-        for (IssuedBook ib : issuedBooks) {
+        for (IssuedBook ib : issuedBooks)
+        {
             if (ib.getBook().getID() == bookId &&
-                    ib.getMember().getId().equals(memberId)) {
-
+                    ib.getMember().getId().equals(memberId))
+            {
                 found = ib;
                 break;
             }
@@ -113,43 +130,58 @@ public class Library {
             issuedBooks.remove(found);
 
             System.out.println("Book returned successfully.");
-        } else {
+        }
+        else
+        {
             System.out.println("No matching issued record found.");
         }
     }
 
-    Book searchBookByID(int id) {
-        for (Book b : books) {
-            if (b.getID() == id) {
+    //method to search a Book and return a Book object using its ID
+    Book searchBookByID(int id)
+    {
+        for (Book b : books)
+        {
+            if (b.getID() == id)
+            {
                 return b;
             }
         }
         return null;
     }
 
-    void searchBookByAuthor() {
+    //method to search a Book and display book first taking the author name from the user
+    void searchBookByAuthor()
+    {
         System.out.print("Enter author name: ");
         String author = input.nextLine();
 
         boolean found = false;
 
-        for (Book b : books) {
-            if (b.getAuthor().equalsIgnoreCase(author)) {
+        for (Book b : books)
+        {
+            if (b.getAuthor().equalsIgnoreCase(author))
+            {
                 b.displayBook();
                 found = true;
             }
         }
-        if (!found) {
+        if (!found)
+        {
             System.out.println("No books found by this author.");
         }
     }
 
-    void displayIssuedBooks() {
-        if (issuedBooks.isEmpty()) {
+    //method to display all the issued books
+    void displayIssuedBooks()
+    {
+        if (issuedBooks.isEmpty())
+        {
             System.out.println("No issued books");
             return;
         }
-        for (IssuedBook ib : issuedBooks) {
+        for (IssuedBook ib : issuedBooks)
+        {
             ib.displayIssuedBook();
         }
     }
