@@ -58,6 +58,20 @@ public class Book {
         System.out.println("-------------------------");
     }
 
+    //Setter Methods
+
+    void setTitle(String title){
+        this.title = title;
+    }
+
+    void setAuthor(String author){
+        this.author = author;
+    }
+
+    void setTotalQuantity(int totalQuantity){
+        this.totalQuantity = totalQuantity;
+    }
+
     // Getter Methods
 
     //returns id
