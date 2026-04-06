@@ -1,7 +1,6 @@
 public class Book {
 
     // Attributes
-
     private int id;
     private String title;
     private String author;
@@ -9,8 +8,8 @@ public class Book {
     private int availableQuantity;
 
     //Parameterized Constructor
-    Book(int id, String title, String author, int qty) {
-
+    Book(int id, String title, String author, int qty)
+    {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -19,49 +18,57 @@ public class Book {
     }
 
     // Method to decrement the number of copies upon being called
-    void issueCopy(){
+    void issueCopy()
+    {
         if(availableQuantity > 0){
             availableQuantity--;
             System.out.println("Book issued successfully.");
         }
-        else{
+        else
+        {
             System.out.println("No copies available.");
         }
-    };
+    }
 
     // Method to increment the number of copies upon being called
-    void returnCopy(){
+    void returnCopy()
+    {
         if(availableQuantity < totalQuantity){
             availableQuantity++;
             System.out.println("Book returned successfully.");
         }
-    };
+    }
 
-    void displayBook(){
+    //Method to display book details
+    void displayBook()
+    {
         System.out.println("Book ID: " + id);
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
         System.out.println("Available Copies: " + availableQuantity);
         System.out.println("-------------------------");
-    };
+    }
 
     // Getter Methods
 
     //returns id
-    int getID(){
+    int getID()
+    {
         return id;
-    };
+    }
     //returns title
-    String getTitle(){
+    String getTitle()
+    {
         return title;
-    };
+    }
     //returns author
-    String getAuthor() {
+    String getAuthor()
+    {
         return author;
-    };
+    }
     //returns available quantity
-    int getAvailableQuantity(){
+    int getAvailableQuantity()
+    {
         return availableQuantity;
-    };
-
+    }
 }
