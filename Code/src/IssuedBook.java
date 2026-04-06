@@ -1,19 +1,21 @@
 public class IssuedBook {
 
     //ATTRIBUTES
-
     private Book book; // associated with Book object
     private Member member; //associated with Member object
     private String issueDate;
 
     //Parameterized Constructor
-    IssuedBook(Book book, Member member, String date) {
+    IssuedBook(Book book, Member member, String date)
+    {
         this.book = book;
         this.member = member;
         this.issueDate = date;
     }
 
-    void displayIssuedBook(){
+    //Method to display the details of the issued book
+    void displayIssuedBook()
+    {
         System.out.println("Issued Book Details:");
         book.displayBook();
 
@@ -22,17 +24,21 @@ public class IssuedBook {
 
         System.out.println("Issue Date: " + issueDate);
         System.out.println("--------------------------");
-    };
+    }
 
-    Book getBook(){
+    //Getter methods
+    Book getBook()
+    {
         return book;
-    };
+    }
 
-    Member getMember(){
+    Member getMember()
+    {
         return member;
-    };
+    }
 
-    String getIssueDate(){
+    String getIssueDate()
+    {
         return issueDate;
-    };
+    }
 }
