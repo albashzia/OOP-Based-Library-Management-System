@@ -5,6 +5,13 @@ public class IssuedBook {
     private Member member; //associated with Member object
     private String issueDate;
 
+    //Default Constructor
+    public IssuedBook(){
+        this.book = new Book();
+        this.member = new Member();
+        this.issueDate = "not specified";
+    }
+
     //Parameterized Constructor
     public IssuedBook(Book book, Member member, String date)
     {
