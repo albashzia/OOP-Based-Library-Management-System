@@ -8,7 +8,7 @@ public class Book {
     private int availableQuantity;
 
     //Default Constructor
-    Book(){
+    public Book() {
         this.id = 0;
         this.title = "Not assigned";
         this.author = "Unknown";
@@ -17,8 +17,7 @@ public class Book {
     }
 
     //Parameterized Constructor
-    Book(int id, String title, String author, int qty)
-    {
+    public Book(int id, String title, String author, int qty) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -27,30 +26,25 @@ public class Book {
     }
 
     // Method to decrement the number of copies upon being called
-    void issueCopy()
-    {
-        if(availableQuantity > 0){
+    public void issueCopy() {
+        if (availableQuantity > 0) {
             availableQuantity--;
             System.out.println("Book issued successfully.");
-        }
-        else
-        {
+        } else {
             System.out.println("No copies available.");
         }
     }
 
     // Method to increment the number of copies upon being called
-    void returnCopy()
-    {
-        if(availableQuantity < totalQuantity){
+    public void returnCopy() {
+        if (availableQuantity < totalQuantity) {
             availableQuantity++;
             System.out.println("Book returned successfully.");
         }
     }
 
     //Method to display book details
-    void displayBook()
-    {
+    public void displayBook() {
         System.out.println("Book ID: " + id);
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
@@ -60,38 +54,43 @@ public class Book {
 
     //Setter Methods
 
-    void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    void setAuthor(String author){
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    void setTotalQuantity(int totalQuantity){
+    public void setTotalQuantity(int totalQuantity) {
         this.totalQuantity = totalQuantity;
     }
 
     // Getter Methods
 
     //returns id
-    int getID()
-    {
+    public int getID() {
         return id;
     }
+
     //returns title
-    String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
+
     //returns author
-    String getAuthor()
-    {
+    public String getAuthor() {
         return author;
     }
+
+    //returns total quantity
+    public int getTotalQuantity() {
+        return totalQuantity;
+    }
+
     //returns available quantity
-    int getAvailableQuantity()
-    {
+    public int getAvailableQuantity() {
         return availableQuantity;
     }
+
 }
