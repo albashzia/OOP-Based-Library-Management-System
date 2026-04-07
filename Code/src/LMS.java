@@ -19,6 +19,7 @@ public class LMS {
     public void displayMainMenu(){
         int choice;
         do{
+            System.out.println();
             System.out.println("---Library Management System---");
             System.out.println("1.Books Menu");
             System.out.println("2.Member Menu");
@@ -27,13 +28,20 @@ public class LMS {
             System.out.print("Enter your choice : ");
             choice=input.nextInt();
             switch(choice){
-                case 1: booksMenu();
+                case 1:
+                    System.out.println();
+                    booksMenu();
                     break;
-                case 2: membersMenu();
+                case 2:
+                    System.out.println();
+                    membersMenu();
                     break;
-                case 3: studyRoomMenu();
+                case 3:
+                    System.out.println();
+                    studyRoomMenu();
                     break;
                 case 0:
+                    System.out.println();
                     System.out.println("Exiting LMS");
                     break;
                 default :
@@ -49,6 +57,7 @@ public class LMS {
     public void booksMenu(){
         int choice;
         do{
+            System.out.println();
             System.out.println("--BOOKS MENU--");
             System.out.println("1.Add Book");
             System.out.println("2.Remove Book");
@@ -63,6 +72,7 @@ public class LMS {
             choice=input.nextInt();
             switch(choice){
                 case 1:
+                    System.out.println();
                     System.out.print("Enter Book ID: ");
                     int id = input.nextInt();
                     input.nextLine();
@@ -77,28 +87,42 @@ public class LMS {
                     break;
 
                 case 2:
+                    System.out.println();
                     System.out.print("Enter Book ID to remove: ");
                     int removeId = input.nextInt();
                     library.removeBook(removeId);
                     break;
-                case 3: library.displayAllBooks();
+                case 3:
+                    System.out.println();
+                    library.displayAllBooks();
                     break;
-                case 4: library.issueBook();
+                case 4:
+                    System.out.println();
+                    library.issueBook();
                     break;
-                case 5: library.returnBook();
+                case 5:
+                    System.out.println();
+                    library.returnBook();
                     break;
                 case 6:
+                    System.out.println();
                     System.out.print("Enter Book ID: ");
                     int searchId = input.nextInt();
                     Book found = library.searchBookByID(searchId);
                     if (found != null) found.displayBook();
                     else System.out.println("Book not found.");
                     break;
-                case 7: library.searchBookByAuthor();
+                case 7:
+                    System.out.println();
+                    library.searchBookByAuthor();
                     break;
-                case 8: library.displayIssuedBooks();
+                case 8:
+                    System.out.println();
+                    System.out.println();
+                    library.displayIssuedBooks();
                     break;
                 case 0:
+                    System.out.println();
                     System.out.println("Returning to main menu..");
                     break;
                 default:
@@ -119,6 +143,7 @@ public class LMS {
         public void membersMenu(){
             int choice;
             do {
+                System.out.println();
                 System.out.println("--MEMBER MENU--");
                 System.out.println("1.Register Member");
                 System.out.println("2.Remove Member");
@@ -133,6 +158,7 @@ public class LMS {
 
                 switch (choice) {
                     case 1:
+                        System.out.println();
                         System.out.println("Enter member ID:");
                         String id=input.nextLine();
                         System.out.println("Enter member name :");
@@ -144,25 +170,29 @@ public class LMS {
                         library.registerNewMember(id,name,phone,email);
                         break;
                     case 2:
+                        System.out.println();
                         System.out.println("Enter member ID:");
                         String remid=input.nextLine();
                         library.removeMember(remid);
                         break;
                     case 3:
-
+                        System.out.println();
                         System.out.println("Enter member ID:");
                         String sid=input.nextLine();
                         library.searchMemberById(sid);
                         break;
                     case 4:
+                        System.out.println();
                         System.out.println("Enter member name:");
                         String memName=input.nextLine();
                         library.searchMemberByName(memName);
                         break;
                     case 5:
+                        System.out.println();
                         library.viewBooksIssuedByAMember();
                         break;
                     case 6:
+                        System.out.println();
                         library.displayAllMembers();
                         break;
                     case 0:
@@ -179,6 +209,7 @@ public class LMS {
     public void studyRoomMenu(){
         int choice;
         do{
+            System.out.println();
             System.out.println("--STUDY ROOM MENU--");
             System.out.println("1.Display all Rooms");
             System.out.println("2.Reserve Room");
@@ -188,11 +219,32 @@ public class LMS {
             choice=input.nextInt();
 
             switch(choice){
-                case 1: library.displayRoomStatus();
+                case 1:
+                    System.out.println();
+
+
+                    library.displayRoomStatus();
                     break;
-                case 2: library.reserveRoom();
+                case 2:
+                    System.out.println("Enter room number :");
+                    int roomNum=input.nextInt();
+                    input.nextLine();
+
+                    System.out.println("Enter member ID : ");
+                    String memID=input.nextLine();
+
+                    System.out.println();
+                    library.reserveRoom(roomNum,memID);
                     break;
-                case 3: library.cancelReservation();
+                case 3:
+                    System.out.println();
+                    System.out.println("Enter room number  :");
+                    int roomNumber=input.nextInt();
+                    input.nextLine();
+
+                    System.out.println("Enter member ID : ");
+                    String memberID=input.nextLine();
+                    library.cancelReservation(roomNumber,memberID);
                     break;
 
                 case 0:

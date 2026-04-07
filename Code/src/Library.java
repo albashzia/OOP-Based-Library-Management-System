@@ -313,13 +313,8 @@ public class Library {
     /*
      * ----STUDY ROOM OPERATIONS----*/
 
-    void reserveRoom(){
-        System.out.println("Enter room number :");
-        int roomNumber=input.nextInt();
-        input.nextLine();
+    void reserveRoom(int roomNumber,String memberID){
 
-        System.out.println("Enter member ID : ");
-        String memberID=input.nextLine();
 
         StudyRoom room= findRoom(roomNumber);
         if(room==null){
@@ -337,31 +332,27 @@ public class Library {
 
     }
     //Cancel Reservation
-    void cancelReservation(){
-        System.out.println("Enter room number :");
-        int roomNumber=input.nextInt();
-        input.nextLine();
+    void cancelReservation(int roomNum,String memID){
 
-        System.out.println("Enter member ID : ");
-        String memberID=input.nextLine();
 
-        StudyRoom room= findRoom(roomNumber);
+        StudyRoom room= findRoom(roomNum);
         if(room==null){
             System.out.println("Room does not exist");
             return;
         }
-        Member member= findMemberById(memberID);
+        Member member= findMemberById(memID);
         if(member==null){
             System.out.println("Member does not exist");
             return;
         }
-        if(room.getReservedByMemberID()==null || !room.getReservedByMemberID().equals(memberID)){
+        if(room.getReservedByMemberID()==null || !room.getReservedByMemberID().equals(memID)){
             System.out.println("The member didnt reserve this room.");
             return;
         }
         room.cancelReservation();
 
     }
+
 
     void displayRoomStatus(){
         System.out.println("----------STUDY ROOMS----------");

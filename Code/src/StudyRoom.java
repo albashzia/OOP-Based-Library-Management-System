@@ -66,10 +66,7 @@ public class StudyRoom {
     }
 
     //Getter Methods
-    public boolean isReserved()
-    {
-        return isReserved;
-    }
+
 
     public int getRoomNumber()
     {
