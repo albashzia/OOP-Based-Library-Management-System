@@ -5,7 +5,7 @@ public class LMS {
     Library library;
 
     //constructor
-    LMS(){
+    public LMS(){
         input=new Scanner(System.in);
         library= new Library();
 

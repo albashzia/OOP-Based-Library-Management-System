@@ -16,35 +16,35 @@ public class FileManager
 
     }
 
-    void loadBooks(){
+    public void loadBooks(){
 
     }
 
-    void saveBooks(){
+    public void saveBooks(){
 
     }
 
-    void loadMembers(){
+    public void loadMembers(){
 
     }
 
-    void saveMembers() {
+    public void saveMembers() {
 
     }
 
-    void loadIssuedBooks(){
+    public void loadIssuedBooks(){
 
     }
 
-    void saveIssuedBooks(){
+    public void saveIssuedBooks(){
 
     }
 
-    void loadRooms(){
+    public void loadRooms(){
 
     }
 
-    void saveRooms(){
+    public void saveRooms(){
 
     }
 

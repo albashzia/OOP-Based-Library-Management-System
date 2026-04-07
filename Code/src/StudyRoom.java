@@ -6,14 +6,14 @@ public class StudyRoom {
     private String reservedByMemberID;
 
     //Default Constructor
-    StudyRoom()
+    public StudyRoom()
     {
         roomNumber=0;
         isReserved=false;
         reservedByMemberID=null;
     }
     //Parameterized constructor
-    StudyRoom(int roomNumber)
+    public StudyRoom(int roomNumber)
     {
         this.roomNumber=roomNumber;
         this.isReserved=false;
@@ -21,7 +21,7 @@ public class StudyRoom {
 
     }
     //Parameterized constructor
-    StudyRoom(int roomNumber,boolean isReserved,String reservedByMemberID)
+    public StudyRoom(int roomNumber,boolean isReserved,String reservedByMemberID)
     {
         this.roomNumber=roomNumber;
         this.isReserved=isReserved;
