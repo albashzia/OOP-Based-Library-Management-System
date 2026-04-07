@@ -11,7 +11,7 @@ public class Library {
     Scanner input;
 
     //Default constructor to initialize the objects
-    Library(){
+    public Library(){
         books = new ArrayList<>();
         issuedBooks= new ArrayList<>();
         members=new ArrayList<>();
@@ -28,14 +28,14 @@ public class Library {
      * ----BOOK OPERATIONS----*/
 
     //method to add books to the array list
-    void addBook(Book book)
+    public void addBook(Book book)
     {
         books.add(book);
         System.out.println("Book added.");
     }
 
     //method to remove books from the array list
-    void removeBook(int id)
+    public void removeBook(int id)
     {
         for (int i = 0; i < books.size(); i++)
         {
@@ -50,7 +50,7 @@ public class Library {
     }
 
     //method to display all books using a for-each loop and method defined in Book class
-    void displayAllBooks()
+    public void displayAllBooks()
     {
         if (books.isEmpty())
         {
@@ -64,7 +64,7 @@ public class Library {
     }
 
     //method to issue a Book
-    void issueBook()
+    public void issueBook()
     {
         System.out.print("Enter Book ID: ");
         int id = input.nextInt();
@@ -101,7 +101,7 @@ public class Library {
     }
 
     //method to record a returned book
-    void returnBook()
+    public void returnBook()
     {
         System.out.print("Enter Book ID: ");
         int bookId = input.nextInt();
@@ -138,7 +138,7 @@ public class Library {
     }
 
     //method to search a Book and return a Book object using its ID
-    Book searchBookByID(int id)
+    public Book searchBookByID(int id)
     {
         for (Book b : books)
         {
@@ -151,7 +151,7 @@ public class Library {
     }
 
     //method to search a Book and display book first taking the author name from the user
-    void searchBookByAuthor()
+    public void searchBookByAuthor()
     {
         System.out.print("Enter author name: ");
         String author = input.nextLine();
@@ -173,7 +173,7 @@ public class Library {
     }
 
     //method to display all the issued books
-    void displayIssuedBooks()
+    public void displayIssuedBooks()
     {
         if (issuedBooks.isEmpty())
         {
@@ -186,7 +186,7 @@ public class Library {
         }
     }
 
-    StudyRoom findRoom(int roomNumber)
+    public StudyRoom findRoom(int roomNumber)
     {
         for(StudyRoom r:rooms ){
             if(r.getRoomNumber()==roomNumber){
