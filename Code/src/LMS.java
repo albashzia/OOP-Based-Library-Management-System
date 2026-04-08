@@ -72,18 +72,7 @@ public class LMS {
             choice=input.nextInt();
             switch(choice){
                 case 1:
-                    System.out.println();
-                    System.out.print("Enter Book ID: ");
-                    int id = input.nextInt();
-                    input.nextLine();
-                    System.out.print("Enter Title: ");
-                    String title = input.nextLine();
-                    System.out.print("Enter Author: ");
-                    String author = input.nextLine();
-                    System.out.print("Enter Quantity: ");
-                    int qty = input.nextInt();
-                    Book book = new Book(id, title, author, qty);
-                    library.addBook(book);
+                    library.addBook();
                     break;
 
                 case 2:

@@ -28,8 +28,19 @@ public class Library {
      * ----BOOK OPERATIONS----*/
 
     //method to add books to the array list
-    public void addBook(Book book)
+    public void addBook()
     {
+        System.out.println();
+        System.out.print("Enter Book ID: ");
+        int id = input.nextInt();
+        input.nextLine();
+        System.out.print("Enter Title: ");
+        String title = input.nextLine();
+        System.out.print("Enter Author: ");
+        String author = input.nextLine();
+        System.out.print("Enter Quantity: ");
+        int qty = input.nextInt();
+        Book book = new Book(id, title, author, qty);
         books.add(book);
         System.out.println("Book added.");
     }
