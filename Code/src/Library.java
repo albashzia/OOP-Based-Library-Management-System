@@ -46,8 +46,11 @@ public class Library {
     }
 
     //method to remove books from the array list
-    public void removeBook(int id)
+    public void removeBook()
     {
+        System.out.println();
+        System.out.print("Enter Book ID to remove: ");
+        int id = input.nextInt();
         for (int i = 0; i < books.size(); i++)
         {
             if (books.get(i).getID() == id)

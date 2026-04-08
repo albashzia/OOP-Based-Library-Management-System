@@ -76,10 +76,7 @@ public class LMS {
                     break;
 
                 case 2:
-                    System.out.println();
-                    System.out.print("Enter Book ID to remove: ");
-                    int removeId = input.nextInt();
-                    library.removeBook(removeId);
+                    library.removeBook();
                     break;
                 case 3:
                     System.out.println();
