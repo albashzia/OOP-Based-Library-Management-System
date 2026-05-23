@@ -10,7 +10,7 @@
 <h2>Team Members</h2>
     <ul>
         <li>Ahmad Albash Zia - <a href="https://github.com/albashzia">albashzia</a></li>
-        <li>Asra - <a href="https://github.com/asra-06">asra-06</a></li>
+        <li>Asra - <a href="http://github.com/asrawazir">asrawazir</a></li>
         <li>Eshal Naeem Raja - <a href="https://github.com/EshalNaeem028">EshalNaeem028</a> </li>
     </ul>
 
